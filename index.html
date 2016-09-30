@@ -6,12 +6,17 @@
 <body>
 
 <h1>Fill your details</h1>
-<form id="formUserInfo" style="background-color:#F2F3F4; padding:4px; width:240px;">
- Name:  <input type="text" id="txtName" name="txtName" style="padding:2px; margin:2px;"><br>
- Email: <input type="text" id="txtEmail" name="txtEmail"style="padding:2px; margin:2px;"><br>
- <input type="button" id="btnSubmitInfo" name="btnSubmitInfo" value="Submit" style="padding:2px; margin:2px;">
+<form id="formUserInfo">
+ Name:  <input type="text" id="txtName" name="txtName" ><br>
+ Email: <input type="text" id="txtEmail" name="txtEmail"><br>
+ <input type="button" id="btnSubmitInfo" name="btnSubmitInfo" value="Submit">
 </form>
 </body>
+
+<style>
+form {background-color:#F2F3F4; padding:4px; width:240px;}
+input {padding:2px; margin:2px;}
+</style>
 
 <script type="text/javascript">
 document.getElementById("btnSubmitInfo").addEventListener("click", function () {
