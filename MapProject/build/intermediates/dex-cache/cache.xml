@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Perera/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-8dc12f3b343817d738862a92421a1f86d27778ed.jar" />
+    </item>
+    <item
+        jar="/Users/Perera/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.0/2b802460eea20f8f2ad9c08c74e0f14718e88aa9/okhttp-3.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/pre-dexed/debug/okhttp-3.3.0-199ce94f1825fbc12b85d89aa256a2046cfc9664.jar" />
+    </item>
+    <item
+        jar="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/pre-dexed/debug/classes-6ac083b5a81b72c996d470a47c32e8ba4cca38cb.jar" />
+    </item>
+    <item
+        jar="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-aa39d30a6d8d12bce44ec2e53fc6d50c0ea8d85a.jar" />
+    </item>
+    <item
+        jar="/Users/Perera/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/pre-dexed/debug/okio-1.8.0-3ef4ef75fc04495fd684a50ac1c9b88049bf64ed.jar" />
+    </item>
+    <item
+        jar="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/pre-dexed/debug/classes-fa4333fc5fbce06b6b15df5a62d0c808ec90c073.jar" />
+    </item>
+    <item
+        jar="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/Users/Perera/Downloads/Archive/projects/AndroidStudioProjects/MapProject/app/build/intermediates/pre-dexed/debug/classes-4ac62dc4977750f2ab5cc1d0bf3ac7c3e09c4aab.jar" />
+    </item>
+
+</items>
