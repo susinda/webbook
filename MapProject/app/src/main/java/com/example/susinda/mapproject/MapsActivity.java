@@ -68,7 +68,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 JSONObject jsonObject = new JSONObject(responseString);
                 double lat = jsonObject.getDouble("Lat");
                 double lon = jsonObject.getDouble("Lon");
-                final LatLng dbLocation = new LatLng(lon, lat);
+                final LatLng dbLocation = new LatLng(lat, lon);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
