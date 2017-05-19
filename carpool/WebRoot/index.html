@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>carpool.lkauto.org</title>
+</head>
+<body>
+<label>carpool webapp version :</label>
+<label id="lblVersion">null</label>
+<div class="login-page">
+</div>
+<body>
+
+
+<style>
+.login-page {
+	width: 360px;
+	padding: 8% 0 0;
+	margin: auto;
+}
+</style>
+
+
+<script type="text/javascript">
+window.onload = function WindowLoad(event) {
+  var url = "https://carpool.lkauto.org/webbook.api/user/service/version";
+  httpGET("name", "email", url);
+}
+</script>
+
+</html>
+                 
