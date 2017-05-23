@@ -8,13 +8,26 @@
 
 <head>
 <meta name="google-signin-client_id" content="264767066704-r9odamulampqqsjj4a2egh3hm5u8vc26.apps.googleusercontent.com">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<div id="status">
-
+<div class="main-page">
 <label>carpool webapp version :</label>
 <label id="lblVersion">null</label>
+
+<div id="btnTopRightDiv"class="nav navbar-nav navbar-right">
+<div  class="dropdown">
+    <button id="btnTopRightLogin" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Sign Out</a></li>
+    </ul>
+  </div>
+  </div>
 
 <div class="login-page">
 	<div class="form">
@@ -34,7 +47,16 @@
 			</p>
 		</form>
 		<form class="login-form" >
-		   <div class="horiz-aligned">
+		    <div><span><p class="message">Login using your registered account</p><p/></span></div>
+			<input id="txtEmailX" type="text" placeholder="Email Address" />
+			<input id="txtPass1X" type="password" placeholder="Password" />
+			<button id="btnLogin" style="align:left" name="btnLogin" >Login</button>
+			<p class="message">
+				Don't have an account? <a href="#">Create an account</a>
+			</p>
+           
+            <span><p class="message"><b>OR</b></p><p/></span>
+			<div class="horiz-aligned">
 		    <a href="#"  onclick="fb_login()" class="connect facebook">
               <div class="connect__context">
              <!--  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button> -->
@@ -48,25 +70,26 @@
               </div>
             </a>
             </div>
-			<input id="txtEmailX" type="text" placeholder="Email Address" />
-			<input id="txtPass1X" type="password" placeholder="Password" />
-			<button id="btnLogin" style="align:left" name="btnLogin" >Login</button>
-			<p class="message">
-				Not registered? <a href="#">Create an account</a>
-			</p>
 		</form>
 	</div>
+</div>
 </div>
 </div>
 </body>
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+.main-page {
+	width: 1024px;
+	margin: auto;
+}
+
 .login-page {
 	width: 400px;
 	padding: 8% 0 0;
 	margin: auto;
 }
+
 
 .form {
 	position: relative;
@@ -117,7 +140,7 @@ margin: 0 0 15px;
 
 .form .message {
 	margin: 15px 0 0;
-	color: #b3b3b3;
+	color: #2b2b2b;
 	font-size: 12px;
 }
 
@@ -233,6 +256,15 @@ body {
   background: #b52f1f;
 }
 
+.middle-line{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 9px;
+  height: 20px;
+  position: relative;
+  width: 100%;
+}
+
 
 </style>
 
@@ -269,6 +301,7 @@ function onSignIn(googleUser) {
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  $("#btnTopRightLogin").html(profile.getEmail());
 }
 
 function fb_login() {
@@ -285,11 +318,13 @@ function statusChangeCallback(response) {
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
-      window.location = "https://carpool.lkauto.org/carpool/index.html";
+      var uid = response.authResponse.userID;
+      var accessToken = response.authResponse.accessToken;
+     
+      //window.location = "https://carpool.lkauto.org/carpool/login.html";
     } else {
       // The person is not logged into your app or we are unable to tell.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+    	$("#btnTopRightLogin").html("Login ");
     }
   }
 
@@ -306,9 +341,7 @@ window.fbAsyncInit = function() {
       xfbml      : true,
       version    : 'v2.8'
     });
-    FB.Event.subscribe('auth.login', function () {
-          window.location = "https://carpool.lkauto.org/carpool/index.html";
-      });
+    FB.Event.subscribe('auth.statusChange', checkLoginState);
     FB.AppEvents.logPageView();   
   };
 
@@ -323,9 +356,7 @@ window.fbAsyncInit = function() {
 function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+    	 $("#btnTopRightLogin").html(response.name);
     });
   }
    
@@ -343,6 +374,7 @@ $('.message a').click(function(){
 window.onload = function WindowLoad(event) {
  // httpGET("name", "email", version_url);
  startApp();
+ $("#btnTopRightLogin").html("profile.getEmail()");
 }
 
 function httpGET(name, email, endpoint) {
