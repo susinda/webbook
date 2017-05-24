@@ -1,33 +1,47 @@
-<!-- <div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
- -->
 
 <head>
 <meta name="google-signin-client_id" content="264767066704-r9odamulampqqsjj4a2egh3hm5u8vc26.apps.googleusercontent.com">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="js/myscript.js"></script>
 </head>
 
 <body>
 <div class="main-page">
-<label>carpool webapp version :</label>
-<label id="lblVersion">null</label>
-
-<div id="btnTopRightDiv"class="nav navbar-nav navbar-right">
-<div  class="dropdown">
-    <button id="btnTopRightLogin" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Login
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Sign Out</a></li>
-    </ul>
-  </div>
-  </div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<label class="navbar-brand" href="#">carpool.lkauto.org</label>
+					<label class="navbar-brand" id="lblVersion">null</label>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a id="loginLink" href="#" class="dropdown-toggle" data-toggle="dropdown">Login<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Profile</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									<a href="#">SignOut</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+</div>
 
 <div class="login-page">
 	<div class="form">
@@ -47,14 +61,13 @@
 			</p>
 		</form>
 		<form class="login-form" >
-		    <div><span><p class="message">Login using your registered account</p><p/></span></div>
+		    <div><span><p class="message">Login with your registered account</p><p/></span></div>
 			<input id="txtEmailX" type="text" placeholder="Email Address" />
 			<input id="txtPass1X" type="password" placeholder="Password" />
 			<button id="btnLogin" style="align:left" name="btnLogin" >Login</button>
 			<p class="message">
 				Don't have an account? <a href="#">Create an account</a>
 			</p>
-           
             <span><p class="message"><b>OR</b></p><p/></span>
 			<div class="horiz-aligned">
 		    <a href="#"  onclick="fb_login()" class="connect facebook">
@@ -74,379 +87,6 @@
 	</div>
 </div>
 </div>
-</div>
+
 </body>
-<style>
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.main-page {
-	width: 1024px;
-	margin: auto;
-}
-
-.login-page {
-	width: 400px;
-	padding: 8% 0 0;
-	margin: auto;
-}
-
-
-.form {
-	position: relative;
-	z-index: 1;
-	background: #FFFFFF;
-	max-width: 400px;
-	margin: 0 auto 100px;
-	padding: 45px;
-	text-align: center;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
-		rgba(0, 0, 0, 0.24);
-}
-
-.form input {
-	font-family: "Roboto", sans-serif;
-	outline: 0;
-	background: #f2f2f2;
-	width: 100%;
-	border: 0;
-	margin: 0 0 15px;
-	padding: 15px;
-	box-sizing: border-box;
-	font-size: 14px;
-}
-
-. horiz-aligned {
-margin: 0 0 15px;
-}
-
-.form button {
-	font-family: "Roboto", sans-serif;
-	text-transform: uppercase;
-	outline: 0;
-	background: #4CAF50;
-	width: 100%;
-	border: 0;
-	padding: 15px;
-	color: #FFFFFF;
-	font-size: 14px;
-	-webkit-transition: all 0.3 ease;
-	transition: all 0.3 ease;
-	cursor: pointer;
-}
-
-.form button:hover, .form button:active, .form button:focus {
-	background: #43A047;
-}
-
-.form .message {
-	margin: 15px 0 0;
-	color: #2b2b2b;
-	font-size: 12px;
-}
-
-.form .message a {
-	color: #4CAF50;
-	text-decoration: none;
-}
-
-.form .register-form {
-	display: none;
-}
-
-.container {
-	position: relative;
-	z-index: 1;
-	max-width: 300px;
-	margin: 0 auto;
-}
-
-.container:before, .container:after {
-	content: "";
-	display: block;
-	clear: both;
-}
-
-.container .info {
-	margin: 50px auto;
-	text-align: center;
-}
-
-.container .info h1 {
-	margin: 0 0 15px;
-	padding: 0;
-	font-size: 36px;
-	font-weight: 300;
-	color: #1a1a1a;
-}
-
-.container .info span {
-	color: #4d4d4d;
-	font-size: 12px;
-}
-
-.container .info span a {
-	color: #000000;
-	text-decoration: none;
-}
-
-.container .info span .fa {
-	color: #EF3B3A;
-}
-
-body {
-	background: #76b852; /* fallback for old browsers */
-	background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-	background: -moz-linear-gradient(right, #76b852, #8DC26F);
-	background: -o-linear-gradient(right, #76b852, #8DC26F);
-	background: linear-gradient(to left, #76b852, #8DC26F);
-	font-family: "Roboto", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-
-.connect::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.connect:focus, .connect:hover, .connect:visited {
-  color: #FFF;
-  text-decoration: none;
-}
-
-
-.connect {
-  overflow: hidden;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  height: 48px;
-  line-height: 48px;
-  width: 50%;
-  text-decoration: none;
-  font-size: 14px;
-  margin: 0 0 15px;
-}
-
-.connect__context {
-  vertical-align: middle;
-  text-align: left;
-  margin:0 0 15px 8px;
-}
-
-.connect.facebook {
-  background: #3b5998; 
-  float:left;
-  color: #FFF;
-}
-.connect.facebook a {
-  color: #FFF;
-}
-
-.connect.googleplus {
-  background: #dd4b39;
-  color: #FFF;
-}
-.connect.googleplus a {
-  color: #FFF;
-}
-.connect.googleplus .connect__icon {
-  background: #b52f1f;
-}
-
-.middle-line{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 9px;
-  height: 20px;
-  position: relative;
-  width: 100%;
-}
-
-
-</style>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script type="text/javascript">
-
-var startApp = function() {
-    gapi.load('auth2', function(){
-        // Retrieve the singleton for the GoogleAuth library and set up the client.
-        auth2 = gapi.auth2.init({
-        client_id: '264767066704-r9odamulampqqsjj4a2egh3hm5u8vc26.apps.googleusercontent.com',
-        cookiepolicy: 'single_host_origin',
-        // Request scopes in addition to 'profile' and 'email'
-        //scope: 'additional_scope'
-      });
-      attachSignin(document.getElementById('customGoogleBtn'));
-    });
-  };
-
-  function attachSignin(element) {
-    console.log(element.id);
-    auth2.attachClickHandler(element, {},
-        function(googleUser) {
-         onSignIn(googleUser);
-        }, function(error) {
-          alert(JSON.stringify(error, undefined, 2));
-        });
-  }
-
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  $("#btnTopRightLogin").html(profile.getEmail());
-}
-
-function fb_login() {
-    FB.login( function() {}, { scope: 'email,public_profile' } );
-}
-
-function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-      var uid = response.authResponse.userID;
-      var accessToken = response.authResponse.accessToken;
-     
-      //window.location = "https://carpool.lkauto.org/carpool/login.html";
-    } else {
-      // The person is not logged into your app or we are unable to tell.
-    	$("#btnTopRightLogin").html("Login ");
-    }
-  }
-
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
-
-window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '415953682121092',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.Event.subscribe('auth.statusChange', checkLoginState);
-    FB.AppEvents.logPageView();   
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-   
-function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-    	 $("#btnTopRightLogin").html(response.name);
-    });
-  }
-   
-   
-   
-var reg_url = "https://carpool.lkauto.org/webbook.api-1.0/user/service/register";
-var version_url = "https://carpool.lkauto.org/webbook.api-1.0/user/service/version";
-var loc_url = "https://carpool.lkauto.org/webbook.api-1.0/user/service/location";
-var login_url = "https://carpool.lkauto.org/webbook.api-1.0/user/service/login";
-
-$('.message a').click(function(){
-   $('form').animate({height: "toggle", opacity: "toggle"}, "fast");
-});
-
-window.onload = function WindowLoad(event) {
- // httpGET("name", "email", version_url);
- startApp();
- $("#btnTopRightLogin").html("profile.getEmail()");
-}
-
-function httpGET(name, email, endpoint) {
-        var http = new XMLHttpRequest();
-        var url = endpoint;
-        var params = "name=" + name + "&email=" + email;
-        http.open("GET", url, true);
-
-        //Send the proper header information along with the request
-        http.setRequestHeader("Content-type", "application/json");
-        
-        http.onreadystatechange = function() {//Call a function when the state changes.
-        
-            if(http.readyState == 4 && http.status == 200) {
-                var resultJson = JSON.parse(http.responseText);
-                document.getElementById("lblVersion").innerHTML = resultJson.Version;
-            }
-        }
-        http.send(params);
-}
-
-function httpPOST(body, url) {
-        var http = new XMLHttpRequest();
-        http.open("POST", url, true);
-        http.setRequestHeader("Content-type", "application/json");
-
-        http.onreadystatechange = function() { 
-            if(http.readyState == 4 && http.status == 200) {
-                console.log("http POST success");
-                //document.getElementById("lblResult").innerHTML = "User registration successful " + http.responseText;
-            }
-        }
-        http.send(body);
-}
-
-
-document.getElementById("btnRegister").addEventListener("click", function () {
-        var name = document.getElementById("txtFName").value;
-        var email = document.getElementById("txtEmail").value;
-        var pwd1 = document.getElementById("txtPass1").value;
-        var pwd2 = document.getElementById("txtPass2").value;
-
-        if (pwd1 != pwd2) {
-             alert ("Passwors does not mach");
-             return;
-        } else {
-             var body  = {};
-             body.Name = name;
-	         body.Email = email;
-	         body.Password = pwd1;      
-	         body = JSON.stringify(body);
-	         httpPOST(body, reg_url);
-}
-});
-
-/* document.getElementById("btnUpdateLocation").addEventListener("click", function () {
-        var body1 = {};
-        body1.Phone = "0716049075";
-        body1.Lat = "6.678678";
-        body1.Lon = "79.909091";
-        body1 = JSON.stringify(body1)
-        httpPOST(body1, loc_url);
-}); */
-
-document.getElementById("btnLogin").addEventListener("click", function () {
-        
-        var email = document.getElementById("txtEmailX").value;
-        var pwd1 = document.getElementById("txtPass1X").value;
-        var body2  = {};
-        body2.Email = email;
-        body2.Password = pwd1;      
-        body2 = JSON.stringify(body2);
-        httpPOST(body2, login_url);
-});
-</script>
