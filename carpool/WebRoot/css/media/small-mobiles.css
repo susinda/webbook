@@ -1,0 +1,161 @@
+
+
+
+.padding-l-0{
+	padding-left:15px;
+}
+#contact{
+	width:100%;
+	margin-top:50px;
+	border: 1px solid #fff;
+}
+.header-content-box {
+    border: 1px solid #fff;
+    min-height: auto;
+    text-align: center;
+}
+.footer-content {
+    width: 100%;
+}
+
+.header-bg-banner{
+	height:auto;
+	padding-bottom:90px;
+}
+.footer-content .footer-content-image{
+	width:100%;
+}
+.footer-content .footer-content-description{
+	padding-top: 35px;
+    text-align: center;
+    width: 100%;
+}
+.navbar-default .navbar-brand{
+	width:100%;
+	text-align:center;
+}
+.footer-menu .download_app a img {
+    display: block;
+    float: none;
+    height: 50px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-menu h2{
+	padding-top:30px;
+	padding-bottom:30px;
+}
+#datepicker{
+	width:100%;
+}
+.timepicker{
+	width:100%;
+	margin-top: 15px;
+}
+.selections-area .fa-clock-o {
+	top: 28px;
+}
+.selections-area .select:last-child > .btn{
+	width:100%;
+	margin-top: 15px;
+}
+.selections-area .dropdown-menu{
+	width:100%;
+	min-width:100%;
+	left:0;
+}
+.footer-copyright h4{
+	font-size:12px;
+}
+.header-content-box iframe {
+    height: 250px;
+}
+.navbar-default .col-xs-3{
+	 width: 23%;
+	  padding-left: 0;
+}
+.navbar-default .col-xs-9 {
+    padding-left: 0;
+    width: 77%;
+}
+.aside.in {
+    min-width: 250px;
+    width: 15%;
+}
+
+#contact .filter-group label{
+	font-size:11px;
+}
+#contact .forgot_pass a{
+	font-size:11px;
+}
+.create_account{
+	font-size:11px;
+}
+.header-bg-banner .col-lg-6{
+	padding-left:15px !important;
+	padding-right:15px !important;
+}
+.header-content-box #map {
+    min-height: 250px;
+}
+.available_rides{
+	padding:15px;
+}
+.tab_top_filter input{
+	width:100%;
+	margin-bottom:30px;
+}
+#datepicker {
+    margin-bottom: 10px;
+}
+.timepicker{
+	margin-bottom:0px;
+}
+#alltabs #current_rides thead tr th{
+	font-size: 13px;
+}
+#alltabs #current_rides tbody tr td{
+	font-size: 12px;
+}
+.scrolling_table #example_wrapper{
+	width:1000px;
+}
+.scrolling_table{
+	 overflow-x: scroll;
+    width: 100%;
+}
+.tab_top_filter a button{
+	width:70px;
+}
+
+.ui-timepicker-standard{
+	z-index:999 !important;
+}
+.available_rides{
+	margin-top:35px;
+}
+.customer_name a button{
+	font-size:11px;
+}
+.tab_top_filter a button{
+	font-size:10px;
+}
+#contact .forgot_pass{
+	padding-top:22px;
+}
+#contact .filter-group label{
+	font-size:10px;
+}
+#contact .forgot_pass a {
+    font-size: 10px;
+}
+.scrolling_table #example_wrapper .col-sm-6{
+	width:50%;
+	float:left;
+}
+.scrolling_table #example_wrapper .col-sm-5, .col-sm-7{
+	width:50%;
+	float:left;
+}

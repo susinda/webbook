@@ -32,7 +32,7 @@
 		<version>2.1</version>
 		<configuration>
 			<url>http://lkauto.org:80/manager/text</url>
-			<server>tomcat7</server>
+			<server>tomcat</server>
 		</configuration>
 	</plugin>
     </plugins>

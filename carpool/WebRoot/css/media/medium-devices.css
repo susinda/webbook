@@ -1,0 +1,23 @@
+
+
+#contact{
+	width:500px;
+}
+.footer-content{
+	width:80%;
+}
+.header-content-box h1{
+	font-size:40px;
+}
+.header-content-box h4{
+	 font-size: 15px;
+	 padding-bottom:7.5px;
+}
+
+.header-bg-banner .col-lg-6{
+	padding-left:15px !important;
+	padding-right:15px !important;
+}
+.tab_top_filter a button{
+	width: 93px;
+}

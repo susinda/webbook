@@ -35,6 +35,23 @@ function fb_login() {
     FB.login( function() {}, { scope: 'email,public_profile' } );
 }
 
+
+function fbLogout() {
+	console.log('function fbLogout()');
+	
+	var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('google User signed out.');
+    });
+	
+        FB.logout(function (response) {
+            //Do what ever you want here when logged out like reloading the page
+        	 console.log('FB.logout(function (response)');
+            //window.location.reload();
+        });
+    }
+
+
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -90,10 +107,10 @@ function testAPI() {
    
 
 
-var reg_url = "https://carpool.lkauto.org/webbook.api-1.0/user/service/register";
-var version_url = "https://carpool.lkauto.org/webbook.api-1.0/user/service/version";
-var loc_url = "https://carpool.lkauto.org/webbook.api-1.0/user/service/location";
-var login_url = "https://carpool.lkauto.org/webbook.api-1.0/user/service/login";
+var reg_url = "https://carpool.lkauto.org/sms/user/service/register";
+var version_url = "https://carpool.lkauto.org/sms/user/service/version";
+var loc_url = "https://carpool.lkauto.org/sms/user/service/location";
+var login_url = "https://carpool.lkauto.org/sms/user/service/login";
 
 window.onload = function WindowLoad(event) {
  httpGET("name", "email", version_url);

@@ -1,0 +1,65 @@
+
+
+.padding-l-0{
+	padding-left:15px;
+}
+#contact{
+	width:500px;
+	margin-top:50px;
+}
+.header-content-box {
+    border: 1px solid #fff;
+    min-height: auto;
+	text-align: center;
+}
+
+.footer-content {
+    width: 100%;
+}
+
+.header-bg-banner{
+	height:auto;
+	padding-bottom:90px;
+}
+.footer-menu .download_app a img {
+    display: block;
+    float: none;
+    height: 50px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-menu h2{
+	padding-top:30px;
+	padding-bottom:30px;
+}
+.header-bg-banner .col-lg-6{
+	padding-left:15px !important;
+	padding-right:15px !important;
+}
+
+.tab_top_filter a button{
+	width:70px;
+}
+.available_rides{
+	margin-top:35px;
+}
+
+.scrolling_table #example_wrapper{
+	width:1000px;
+}
+.scrolling_table{
+	 overflow-x: scroll;
+    width: 100%;
+}
+.tab_top_filter a button{
+	font-size:10px;
+}
+.scrolling_table #example_wrapper .col-sm-6{
+	width:50%;
+	float:left;
+}
+.scrolling_table #example_wrapper .col-sm-5, .col-sm-7{
+	width:50%;
+	float:left;
+}
