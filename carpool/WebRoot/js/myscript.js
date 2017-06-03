@@ -28,7 +28,8 @@ function onSignIn(googleUser) {
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
   
-  $("#loginLink").html(profile.getEmail());
+  $("#btnTopRightLogin").html(profile.getEmail());
+  
 }
 
 function fb_login() {
@@ -101,16 +102,16 @@ function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
     	console.log('Welcome! loginLink .... ');
-    	 $("#loginLink").html(response.name);
+    	 $("#btnTopRightLogin").html(response.name);
     });
   }
    
 
 
-var reg_url = "https://carpool.lkauto.org/sms/user/service/register";
-var version_url = "https://carpool.lkauto.org/sms/user/service/version";
-var loc_url = "https://carpool.lkauto.org/sms/user/service/location";
-var login_url = "https://carpool.lkauto.org/sms/user/service/login";
+var reg_url = "https://carpool.lkauto.org/webbook.api/user/service/register";
+var version_url = "https://carpool.lkauto.org/webbook.api/user/service/version";
+var loc_url = "https://carpool.lkauto.org/webbook.api/user/service/location";
+var login_url = "https://carpool.lkauto.org/webbook.api/user/service/login";
 
 window.onload = function WindowLoad(event) {
  httpGET("name", "email", version_url);
