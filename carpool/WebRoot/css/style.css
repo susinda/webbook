@@ -1370,3 +1370,7 @@ box-shadow:0 0px 25px -10px rgba(0, 0, 0, 0.75);
 .social_accounts .facebook{
 	margin-bottom:0px;
 }
+
+.pac-container {
+    width: 320px !important;
+}
