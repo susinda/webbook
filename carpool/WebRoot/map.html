@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Index</title>
  
-    <!-- **
-	 * ========================================
-	 * Main Style
-	 * ========================================
-	* -->
+  
 	 <link rel="stylesheet" href="css/jquery.css">
 	<!-- Animate -->
      <link rel="stylesheet" href="css/animate.css">
@@ -36,8 +32,6 @@
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 1px) and (max-width: 349px)"
           href="css/media/small-mobiles.css"/>
 		  
-	  
-	
 </head>
 
 <body>
@@ -226,71 +220,53 @@
 	</div>
 </footer>	
 	
-			
 
-	<!-- **
- * ========================================
- * Js
- * ========================================
- * -->
 
  <!--[if lt IE 9]>
  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
  <![endif]-->
  
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  main js -->
- <script src="js/jquery.min.js"></script>
- <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script> <!-- bootstrap js -->
- <script src="js/jquery_002.js"></script>
- <script src="js/js"></script>
- <script src="js/smoothscroll.min.js"></script> 
+<script src="js/smoothscroll.min.js"></script> 
 <script type="text/javascript" src="js/asidebar.jquery.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script language="javascript" type="text/javascript">
-
-    var map;
-    var geocoder;
-    function InitializeMap() {
-
-        var latlng = new google.maps.LatLng(33.733759, 73.134961);
-        var myOptions =
-        {
-            zoom: 8,
-            center: latlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            disableDefaultUI: true
-        };
-        map = new google.maps.Map(document.getElementById("map"), myOptions);
-    }
-
-    function FindLocaiton() {
-        geocoder = new google.maps.Geocoder();
-        InitializeMap();
-
-        var address = document.getElementById("addressinput").value;
-        geocoder.geocode({ 'address': address }, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                map.setCenter(results[0].geometry.location);
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location
-                });
-
-            }
-            else {
-                alert("Geocode was not successful for the following reason: " + status);
-            }
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxASDrjYHHnb45QsXNqlwjV18lBNHOqXw&callback=initMap"></script>
+<script>
+function initMap() {
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat: 6.788, lng: 79.891}
         });
+        directionsDisplay.setMap(map);
 
-    }
+        var onChangeHandler = function() {
+          calculateAndDisplayRoute(directionsService, directionsDisplay);
+        };
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+        //document.getElementById('start').addEventListener('change', onChangeHandler);
+        //document.getElementById('end').addEventListener('change', onChangeHandler);
+      }
 
-    window.onload = InitializeMap;
-
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        directionsService.route({
+         /*  origin: document.getElementById('start').value,
+          destination: document.getElementById('end').value, */
+          origin:"Panadura",
+          destination:"Kollupitiya",
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
 </script>
-
-
+    
 
 <script type="text/javascript">
 $('.message a').click(function(){
@@ -332,7 +308,6 @@ $(document).click(function(){
 <!-- WOW script -->
 <script src="js/wow.min.js"></script>
 <script src="js/main.js"></script>
-<script src="js/rideshare.js"></script>
  
 </body>
 </html>
