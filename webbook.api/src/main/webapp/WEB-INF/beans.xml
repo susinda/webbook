@@ -13,4 +13,25 @@
             <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
         </jaxrs:providers>
     </jaxrs:server>
+    <jaxrs:server id="dialogsms" address="/dialog/sms">
+        <jaxrs:serviceBeans>
+            <bean class="org.susi.webbook.DialogListnerSMS"/>
+        </jaxrs:serviceBeans>
+    </jaxrs:server>
+    <jaxrs:server id="dialogsubscription" address="/dialog/subscription">
+        <jaxrs:serviceBeans>
+            <bean class="org.susi.webbook.DialogListnerSubscription"/>
+        </jaxrs:serviceBeans>
+    </jaxrs:server>
+     <jaxrs:server id="dialogcaas" address="/dialog/caas">
+        <jaxrs:serviceBeans>
+            <bean class="org.susi.webbook.DialogListnerCAAS"/>
+        </jaxrs:serviceBeans>
+    </jaxrs:server>
+    <jaxrs:server id="dialogussd" address="/dialog/ussd">
+        <jaxrs:serviceBeans>
+            <bean class="org.susi.webbook.DialogListnerUSSD"/>
+        </jaxrs:serviceBeans>
+    </jaxrs:server>
+    
 </beans>
