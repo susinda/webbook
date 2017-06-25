@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="264767066704-r9odamulampqqsjj4a2egh3hm5u8vc26.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
     <title>Index</title>
  
     <!-- **
@@ -11,15 +14,13 @@
 	 * Main Style
 	 * ========================================
 	* -->
-	  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
 	<!-- Animate -->
-     <link rel="stylesheet" href="css/animate.css">
-     <link rel="stylesheet" href="css/jquery.timepicker.css">
-     <link rel="stylesheet" href="css/datepicker.css">
+  <!--    <link rel="stylesheet" href="css/animate.css"> -->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css"/>  <!-- bootstrap css -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>  <!-- bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>  <!-- Custome css -->
-     <!-- Custome css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+      <!-- Custome css -->
+	
 	 <!-- **
 	 * ========================================
 	 * Media Query
@@ -38,7 +39,7 @@
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 1px) and (max-width: 349px)"
           href="css/media/small-mobiles.css"/>
 		  
-	  
+		   
 	
 </head>
 
@@ -49,7 +50,6 @@
  * Header
  * ========================================
  * -->
-
 
 <header>
 	<nav class="navbar navbar-default">
@@ -62,15 +62,15 @@
 			
 				<div class="aside">
 				  <div class="aside-header">
-					 <h4> Menu</h4>
+					 <h4>Menu</h4>
 					<span class="close" data-dismiss="aside" aria-hidden="true">&times;</span>
 				  </div>
 				  <div class="aside-contents">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="rideshares.html">Share rides</a></li>
-						<li><a href="newride.html">New ride</a></li>
-						<li><a href="available-rides.html">Available rides</a></li>	
+						<li><a href="rides.html">Search Rides</a></li>
+						<li><a href="rides.html">New Ride</a></li>
+						<li><a href="available-rides.html">Terms and Conditions</a></li>	
 						<li><a href="#">About Us</a></li>		
 					</ul>
 				  </div>
@@ -82,18 +82,17 @@
 			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-9">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-				  <a class="navbar-brand" href="index.html">My Website</a>
+				  <a class="navbar-brand" href="index.html">carpool.lkauto.org</a>
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 hidden-xs">
 				<!-- Right side bottons -->
 				<div class="sign-login-btn">
 					<div class="input-group-btn select" id="select1">
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="selected">Username</span> <span class="caret"></span></button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span id="btnTopRightLogin" class="selected">Username</span> <span class="caret"></span></button>
 						<ul class="dropdown-menu option" role="menu">
-							<li id="1"><a href="#">option1</a></li>
-							<li id="2"><a href="#">option2</a></li>
-							
+							<li id="1"><a href="#">My Profile</a></li>
+							<li id="2"><a id="fbLogout" onclick="fbLogout()" href="#">Logout</a></li>
 						</ul>
 					</div>
 				</div>
@@ -109,77 +108,104 @@
  * ========================================
  * -->
 
-<section class="new-ride-content">
+<section class="header-bg-banner">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="tab_top_filter">
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 p-0">
-						<input id="txtSrc" class="form-control" placeholder="Source" type="text">
+				<form style="display:block;" id="contact" action="" method="post" class="wow" data-wow-delay="0.8s">
+					<div class="">
+						<h2> Sign in </h2>
 					</div>
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 p-0">
-						<input id="txtDest" class="form-control" placeholder="Destination" type="text">
+					<fieldset>
+						<input placeholder="Username" type="Username" tabindex="1" required autofocus>
+					</fieldset>
+					<fieldset>
+						<input placeholder="Password" type="Password" tabindex="2" required>
+					</fieldset>
+					<fieldset>
+						<div class="filter-group">
+							<ul>
+								<li><input type="checkbox" name="c1" id="c1" ><label for="c1">Remember Me</label></li>
+							</ul>
+						</div>
+						<div class="forgot_pass">
+							<a href="#">Forgot password?</a>
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="carousel-button">
+							<a class="slider-button" href="#">Sign in</a>
+						</div>
+					</fieldset>
+					<fieldset>
+						<p class="create_account message" >
+							 Don't have an account?
+							<a class="#">Create new account</a>
+						</p>
+					</fieldset>
+					<fieldset class="mobile-display">
+						<div class="middle-line" data-separator="Or"></div>
+						<ul class="social_accounts">
+						<li>
+						<a class="facebook" onclick="fb_login()" href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Sign in with Facebook</a>
+						</li>
+						<li><a id="customGoogleBtn" class="googleplus" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i> Sign in with Google</a></li>	
+					</ul>
+					</fieldset>
+				</form>
+				
+				
+				<form id="contact" action="" method="post" class="wow fadeInDown hidden_form" data-wow-delay="0.8s">
+					<div class="">
+						<h2> Create Account  </h2>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p-0">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p-0">
-						<input type="text" id="datepicker" placeholder="Date" class="form-control"/>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p-0">
-						<input class="timepicker timepicker-with-dropdown text-center form-control" placeholder="Time">
-					</div>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p-0">
-						<a href="#"><button>  Search  </button></a>
-						<a href="#"><button>  Offer  </button></a>
-						<a href="#"><button>  Request  </button></a>
-					</div>
-				</div>
+					<fieldset>
+						<input class="user_name_width border_b-r_0" placeholder="First name" type="Username" tabindex="1" required autofocus>
+						<input class="user_name_width border_b_l_0" placeholder="Last name" type="Username" tabindex="1" required autofocus>
+					</fieldset>
+					<fieldset>
+						<input placeholder="Your-Email" type="Username" tabindex="1" required autofocus>
+					</fieldset>
+					<fieldset>
+						<input placeholder="Your password" type="Password" tabindex="2" required>
+					</fieldset>
+					<fieldset>
+						<input placeholder="Repeat password" type="Password" tabindex="2" required>
+					</fieldset>
+					<fieldset>
+						<div class="filter-group new_acc_width">
+							<ul>
+								<li><input type="checkbox" name="c2" id="c2" ><label for="c2">I accept the <a href="#">Terms of Service</a></label></li>
+							</ul>
+						</div>
+					</fieldset>
+					<fieldset>
+						<p class="carousel-button ">
+							<a class="slider-button" href="#">Register</a>
+						</p>
+					</fieldset>
+					<fieldset>
+						<div class="create_account borfer_top_p message">
+							 Already have an account? 
+							<a href="#">Login here</a>
+						</div>
+					</fieldset>
+				</form>
 			</div>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-				<div class="scrolling_table">
-					<table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
-						<thead>
-						  <tr>
-							 <th>Status</th>
-							 <th>User</th>
-							 <th>Start</th>
-							 <th>End</th>
-							 <th>Dte & Time</th>
-							 <th></th>
-						 </tr>
-						</thead>
-							<tbody>
-								<tr>
-								 <td class="match text-center">
-								   <span class="hidden">0</span>
-									<img src="images/Untitled2.png" class="center-block img-responsive">
-									 <img src="images/Untitled-1.png" class="center-block img-responsive">		 
-								 </td>
-								 <td class="startPlace">Ahsan</td>
-								 <td class="endPlace">Colombo</td>
-								 <td>Negombo</td>
-								 <td>May 30 at 00:45</td>                  
-								 <td><a href="#"><button> Join </button></a></td>                  
-								</tr>
-								<tr>
-								 <td class="match text-center">
-								   <span class="hidden">0</span>
-									 <img src="images/clockk.png" class="center-block img-responsive">		 
-									 <img src="images/pool-passenger.png" class="center-block img-responsive">		 
-								 </td>
-								<td class="startPlace">Kumar</td>
-								 <td class="endPlace">Kandy</td>
-								 <td>Negombo</td>
-								 <td>May 30 at 00:45</td>                  
-								 <td><a href="#"><button> Join </button></a></td>                                    
-								</tr>
-							</tbody>
-					</table>
+			<!--<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 padding-l-0">
+				<div class="header-content-box">
+					<h2> If you don't have an account, you can sign up now, or:  </h2>
+					<ul class="social_accounts">
+						<li><a class="facebook"href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Sign in with Facebook</a></li>
+						<li><a class="googleplus" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i> Sign in with Google</a></li>	
+					</ul>
 				</div>
-			</div>
+			</div>-->
 		</div>
 	</div>
+
 </section> 
+
 
 <!-- **
  * ========================================
@@ -259,26 +285,14 @@
  <![endif]-->
  
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  main js -->
- <script src="js/jquery.min.js"></script>
- <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script> <!-- bootstrap js -->
 <script src="js/smoothscroll.min.js"></script>
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/jquery.timepicker.js"></script>	 
 <script type="text/javascript" src="js/asidebar.jquery.js"></script>
-<script type="text/javascript" src=" https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js "></script>
 
-
-
-
-<script>
-$(document).ready(function() {
-    $('#example').DataTable();
-} );
-
-</script>
 
   <script>
   $( function() {
@@ -353,19 +367,6 @@ $(document).click(function(){
 <!-- WOW script -->
 <script src="js/wow.min.js"></script>
 <script src="js/main.js"></script>
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxASDrjYHHnb45QsXNqlwjV18lBNHOqXw&libraries=places&callback=initAutocomplete"
-         async defer></script>
-<script>
-   function initAutocomplete() {
-     // Create the search box and link it to the UI element.
-     var input = document.getElementById('txtSrc');
-     var searchBox = new google.maps.places.SearchBox(input);
-
-     var input = document.getElementById('txtDest');
-     var searchBox = new google.maps.places.SearchBox(input);
-   }
-</script>
-   
- 
+ <script src="js/myscript.js"></script>
 </body>
 </html>
