@@ -35,55 +35,8 @@ $(function(){
         $('#home-carousel .carousel-inner .item, #home-carousel .video-container').css('height',slideHeight);
     });
 
-    // portfolio filtering
-    //$("#projects").mixItUp();
-
-    //fancybox
-
-//    $(".fancybox").fancybox({
-//        padding: 0,
-//
-//        openEffect : 'elastic',
-//        openSpeed  : 650,
-//
-//        closeEffect : 'elastic',
-//        closeSpeed  : 550,
     });
 
-
-    /* ========================================================================= */
-    /*  Facts count
-    /* ========================================================================= */
-
-//    "use strict";
-//    $(".fact-item").appear(function () {
-//        $(".fact-item [data-to]").each(function () {
-//            var e = $(this).attr("data-to");
-//            $(this).delay(6e3).countTo({
-//                from: 50,
-//                to: e,
-//                speed: 3e3,
-//                refreshInterval: 50
-//            })
-//        })
-//    });
-
-/* ========================================================================= */
-/*  On scroll fade/bounce fffect
-/* ========================================================================= */
-
-//    $("#testimonial").owlCarousel({
-//        pagination : true, // Show bullet pagination
-//        slideSpeed : 300,
-//        paginationSpeed : 400,
-//        singleItem:true
-//    });
-//
-//});
-
-/* ========================================================================= */
-/*  On scroll fade/bounce fffect
-/* ========================================================================= */
 
     wow = new WOW({
         animateClass: 'animated',

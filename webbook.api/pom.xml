@@ -58,6 +58,12 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.susi.spring.hibernate.jpa.exersise</groupId>
+			<version>1.0.0</version>
+			<artifactId>spring-hibernate-jpa-sample</artifactId>
+		</dependency>
+	
 	</dependencies>
 	<build>
 		<pluginManagement>

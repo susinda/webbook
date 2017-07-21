@@ -53,6 +53,17 @@ function fbLogout() {
     }
 
 
+function loginWithFBmeAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+    	console.log('Welcome! loginLink .... ');
+    	createCookie('fbcplkusr', response.name ,7);
+    	showOptions();
+    	$("#userNameHeader").text(response.name);
+    });
+  }
+
+
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -62,14 +73,15 @@ function statusChangeCallback(response) {
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      testAPI();
+      //window.location = "https://carpool.lkauto.org/index.html";
       var uid = response.authResponse.userID;
       var accessToken = response.authResponse.accessToken;
-     
-      //window.location = "https://carpool.lkauto.org/carpool/login.html";
+      console.log('response.name ' + response.name);
+      console.log('accessToken ' + accessToken);
+  	  createCookie('fbcplkat', (uid + "-" + accessToken) ,7);
+  	  loginWithFBmeAPI();
     } else {
-      // The person is not logged into your app or we are unable to tell.
-    	$("#btnTopRightLogin").html("Login ");
+	  changeUiOnFbLogout();
     }
   }
 
@@ -97,17 +109,8 @@ window.fbAsyncInit = function() {
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-   
-function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-    	console.log('Welcome! loginLink .... ');
-    	 $("#btnTopRightLogin").html(response.name);
-    });
-  }
-   
 
-
+   
 var reg_url = "https://carpool.lkauto.org/webbook.api/user/service/register";
 var version_url = "https://carpool.lkauto.org/webbook.api/user/service/version";
 var loc_url = "https://carpool.lkauto.org/webbook.api/user/service/location";

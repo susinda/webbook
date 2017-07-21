@@ -891,27 +891,24 @@ ul {
 .sign-login-btn {
     padding-top: 4.5px;
 }
-.sign-login-btn .dropdown a{
+
+
+.sign-login-btn .dropdown .facebook a{
 	padding: 5px 15px;
 	background-color:#fff;
-	color:#000;
+	color:#009;
 	font-family: OpenSans-Regular;
     font-size: 16px;
 	border-radius:3px;
 }
+
 .sign-login-btn .dropdown-menu{
 	right:0;
 	width: 120px;
 	 min-width: 120px;
 	top: 30px;
 }
-.sign-login-btn .dropdown-menu a{
-	color: #000;
-    font-family: OpenSans-Regular;
-    font-size: 14px;
-    padding:5px 10px;
-	background-color: #fff;
-}
+
 .sign-login-btn .dropdown{
 	margin-top:3px;
 }

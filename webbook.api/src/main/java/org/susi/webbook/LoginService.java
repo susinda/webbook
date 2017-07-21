@@ -13,6 +13,9 @@ import javax.ws.rs.core.Response;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.susi.spring.hibernate.jpa.exersise.main.SpringApplication;
+import org.susi.spring.hibernate.jpa.exersise.model.User;
+import org.susi.spring.hibernate.jpa.exersise.service.UserService;
 
 @Path("/user")
 public class LoginService {
@@ -76,16 +79,24 @@ public class LoginService {
 			e.printStackTrace();
 		}
 
-		String result;
-		if (name != null && email != null) {
-			carpoolDAO.addNewUser(name, name, email, pwd);
-			String user = carpoolDAO.getUser(email);
-			System.out.println("User registration ok " + user);
-			result = "{'Result':'OK'}";
-		} else {
-			result = "{'Result':'ERROR'}";
-		}
-		return Response.ok().entity(result).build();
+//		String result;
+//		if (name != null && email != null) {
+//			carpoolDAO.addNewUser(name, name, email, pwd);
+//			String user = carpoolDAO.getUser(email);
+//			System.out.println("User registration ok " + user);
+//			result = "{'Result':'OK'}";
+//		} else {
+//			result = "{'Result':'ERROR'}";
+//		}
+		
+		UserService userService = SpringApplication.getUserService();
+		User testUser = new User();
+		testUser.setFirstName(name);
+		testUser.setEmail(email);
+		testUser.setCookie(pwd);
+		userService.add(testUser);
+		
+		return Response.ok().entity("ok result ").build();
 	}
 
 	@POST

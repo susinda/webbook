@@ -1,0 +1,75 @@
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
+						<a href="#" onclick="$('.aside').asidebar('open')"><i
+							class="fa fa-bars" aria-hidden="true"></i> </a>
+
+						<!---- left menu bar ------>
+
+						<div class="aside">
+							<div class="aside-header">
+								<h4>Menu</h4>
+								<span class="close" data-dismiss="aside" aria-hidden="true">&times;</span>
+							</div>
+							<div class="aside-contents">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="rideshares.html">Share rides</a></li>
+									<li><a href="newride.html">New ride</a></li>
+									<li><a href="available-rides.html">Available rides</a></li>
+									<li><a href="#">About Us</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="aside-backdrop"></div>
+
+						<!---- left menu bar ends here ------>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-9">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<a class="navbar-brand" href="index.html">carpool.lkauto.org</a>
+						</div>
+						<div><a class="navbar-text">Share, Save and Go Green</a>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 hidden-xs">
+						<!-- Right side bottons -->
+						<div class="sign-login-btn">
+							<div class="input-group-btn select" id="select1">
+								<button type="button" class="btn btn-default dropdown-toggle"
+									data-toggle="dropdown" aria-expanded="true">
+									<span id="userNameHeader" class="selected">Login</span> <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu option" role="menu">
+									<li id="loginFbHeaderLi"><a onclick="fb_login()"> Login with FB </a></li>
+									<li id="myProfileHeaderLi"><a onclick="#"> My Profile </a></li>
+									<li id="logoutHeaderLi"><a onclick="changeUiOnFbLogout()"> Logout </a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-->
+		</nav>
+		
+		 <script src="js/jquery.min.js"></script>
+		 <script type="text/javascript" src="js/asidebar.jquery.js"></script>
+		 <script src="js/login.js"></script>
+		 <script src="js/cookie.js"></script>
+		 
+		 <script>
+		 	var x1 = readCookie('fbcplkat');
+		 	var x2 = readCookie('fbcplkusr');
+		 	var x3 = readCookie('fbm_415953682121092');
+		 	var x4 = readCookie('fbsr_415953682121092');
+		 	if (x1 && x2 && x3 && x4) {
+		 		console.log("cookie exists");
+		 		changeUiOnFbLogin(x2);
+			} else {
+				console.log("cookie DOESNOT exists");
+				changeUiOnFbLogout();
+			}
+		 </script>

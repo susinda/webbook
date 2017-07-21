@@ -294,27 +294,7 @@
 <script type="text/javascript" src="js/asidebar.jquery.js"></script>
 
 
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
-  
-<script>
-$('.timepicker').timepicker({
-    timeFormat: 'h:mm p',
-    interval: 60,
-    minTime: '10',
-    maxTime: '6:00pm',
-    defaultTime: '11',
-    startTime: '10:00',
-    dynamic: false,
-    dropdown: true,
-    scrollbar: true
-});
 
-
-</script>
 
 
 <script type="text/javascript">
@@ -334,16 +314,7 @@ $('body').on('click','.option li',function(){
 
 </script>
 
-<script>
-$('body').on('click','.option li',function(){
-	var i = $(this).parents('.select').attr('id');
-	var v = $(this).children().text();
-	var o = $(this).attr('id');
-	$('#'+i+' .selected').attr('id',o);
-	$('#'+i+' .selected').text(v);
-});
 
-</script>
 
 <script>
 
@@ -367,6 +338,6 @@ $(document).click(function(){
 <!-- WOW script -->
 <script src="js/wow.min.js"></script>
 <script src="js/main.js"></script>
- <script src="js/myscript.js"></script>
+ <script src="js/login.js"></script>
 </body>
 </html>
