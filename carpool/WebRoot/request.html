@@ -162,10 +162,10 @@
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="tab_top_filter">
 					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 p-0">
-						<input id="txtSrc" class="form-control" placeholder="Source" type="text">
+						<input  type="text" id="txtSrc" class="form-control" placeholder="Source" >
 					</div>
 					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 p-0">
-						<input id="txtDest" class="form-control" placeholder="Destination" type="text">
+						<input type="text" id="txtDest" class="form-control" placeholder="Destination" >
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p-0">
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p-0">
@@ -176,7 +176,7 @@
 					</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p-0">
-						<a href="#"> <button>  Request  </button></a>
+						<a > <button onclick="addTripClick()">  Request  </button></a>
 					</div>
 				</div>
 			</div>
@@ -358,6 +358,38 @@ $(document).click(function(){
 
      var input = document.getElementById('txtDest');
      var searchBox = new google.maps.places.SearchBox(input);
+   }
+   
+   
+   var trip_reg_url = "https://carpool.lkauto.org/cpapi/trip/addtrip";
+   function httpPOST(body, url) {
+           var http = new XMLHttpRequest();
+           http.open("POST", url, true);
+           http.setRequestHeader("Content-type", "application/json");
+
+           http.onreadystatechange = function() { 
+               if(http.readyState == 4 && http.status == 200) {
+                   console.log("http POST success");
+                   alert(http.responseText);
+               }
+           }
+           http.send(body);
+   }
+   
+   
+   function  addTripClick() {
+       var start = document.getElementById("txtSrc").value;
+       var end = document.getElementById("txtDest").value;
+       var driver = "susinda"; //document.getElementById("datepicker").value;
+       var sheduledTime = document.getElementById("datepicker").value;
+
+       var body  = {};
+       body.start = start;
+       body.end = end;
+       body.driver = driver; 
+       body.sheduledTime = sheduledTime;  
+       body = JSON.stringify(body);
+       httpPOST(body, trip_reg_url);
    }
 </script>
 
